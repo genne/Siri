@@ -19,10 +19,12 @@ export default class ElementGenerator {
 
             let fileName = this.project.makeFileName(name);
             let className = this.project.makeClassName(name);
+            let cssClassName = this._makeCssClassName(className);
 
             self.project.root.add(
               ProjectItem.text(path.join(subFolders, fileName + ".ts"), this.generateJSSource(className)),
-              ProjectItem.text(path.join(subFolders, fileName + ".html"), this.generateHTMLSource(className))
+              ProjectItem.text(path.join(subFolders, fileName + ".html"), this.generateHTMLSource(fileName, cssClassName)),
+              ProjectItem.text(path.join(subFolders, fileName + ".scss"), this.generateSASSSource(cssClassName))
             );
 
             return this.project.commitChanges()
@@ -33,17 +35,21 @@ export default class ElementGenerator {
 
   generateJSSource(className) {
     return `export class ${className} {    
-  message: string;
-  
-  constructor() {
-    this.message = 'Hello world';
-  }
 }`
   }
 
-  generateHTMLSource(className) {
-    return `<template>
-  <h1>\${message}</h1>
+  generateHTMLSource(fileName, cssClassName) {
+    return `<template class="${cssClassName}">
+    <require from="./${fileName}.css"></require>
 </template>`
+  }
+
+  generateSASSSource(className) {
+    return `.${className} {
+}`
+  }
+
+  private _makeCssClassName(className: string) {
+    return className[0].toLowerCase() + className.substr(1);
   }
 }
