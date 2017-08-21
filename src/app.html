@@ -1,0 +1,15 @@
+<template>
+  <require from="app.css"></require>
+  <require from="graphics"></require>
+  <require from="components/word"></require>
+
+  <div class="level">${level}</div>
+
+  <h1>${category}</h1>
+
+  <graphics color.bind="currentColor"></graphics>
+
+  <div class="words">
+    <word click.trigger="selected(word)" repeat.for="word of words">${word}</word>
+  </div>
+</template>

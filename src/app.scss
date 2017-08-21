@@ -1,0 +1,30 @@
+body { 
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: white;
+
+    text-transform: uppercase;
+
+    width: 800px;
+    margin: auto;
+}
+
+.words {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.level {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: yellow;
+    color: red;
+    border: 1px solid;
+    border-radius: 50%;
+    font-size: 60px;
+    width: 100px;
+    line-height: 100px;
+}
