@@ -1,17 +1,10 @@
 <template>
   <require from="app.css"></require>
-  <require from="graphics"></require>
-  <require from="components/word"></require>
+ 
 
   <div class="level">${level}</div>
 
-  <div repeat.for="question of questions">
-    <h1>${category}</h1>
-    
-    <graphics color.bind="currentColor" image-url.bind="currentImage"></graphics>
-    
-    <div class="words">
-      <word click.trigger="selected(word)" repeat.for="word of words" correct.bind="question.answered && question.currectAnswer === answer" incorrect.bind="question.wasAnswered && question.>${word}</word>
-    </div>
-  </div>
+  <question repeat.for="question of questions" level.bind="question"
+    on-select.call="selected(isCorrect)" scroll-to.bind="true & oneTime"></question>
+  
 </template>

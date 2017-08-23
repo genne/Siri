@@ -71,7 +71,7 @@
             ".html",
             ".css"
           ],
-          "stub": true
+          "stub": false
         }
       ]
     },
@@ -132,7 +132,8 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
-          }
+          },
+          "jquery"
         ]
       }
     ]

@@ -1,9 +1,12 @@
 .graphics {
     display: block;
     margin: auto;
-    height: 400px;
+    height: 300px;
+    width: 500px;
     border: 1px solid black;
 
     background-size: cover;
     background-position: center;
+
+    margin-bottom: 20px;
 }

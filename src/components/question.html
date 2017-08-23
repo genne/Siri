@@ -1,3 +1,14 @@
 <template class="question">
     <require from="./question.css"></require>
+
+    <h1>${category}</h1>
+    
+    <graphics color.bind="color" image-url.bind="image"></graphics>
+    
+    <div class="words">
+      <word repeat.for="word of words" 
+        click.trigger="selected(word)" 
+        correct.bind="word === answer && correctAnswer === answer" 
+        incorrect.bind="word === answer && correctAnswer !== answer">${word}</word>
+    </div>
 </template>

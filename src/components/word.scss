@@ -5,14 +5,24 @@
     display: inline-block;
     border: 1px solid;
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
 
     cursor: pointer;
     transition: color 200ms, background-color 200ms;
 
-    &:hover {
+    &-notSelected:hover {
         color: white;
         background: black;
+    }
+
+    &-correct {
+        color: white;
+        background: green;
+    }
+
+    &-incorrect {
+        color: white;
+        background: red;
     }
 
 }
