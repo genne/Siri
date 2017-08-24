@@ -10,6 +10,7 @@
   "dependencies": {
     "aurelia-animator-css": "^1.0.2",
     "aurelia-bootstrapper": "^2.1.1",
+    "aurelia-cli": "^0.30.1",
     "bluebird": "^3.4.1",
     "jquery": "^3.2.1",
     "requirejs": "^2.3.2",
@@ -47,5 +48,8 @@
     "karma-jasmine": "^1.0.2",
     "karma-typescript-preprocessor": "^0.2.1",
     "@types/jasmine": "^2.2.0"
+  },
+  "scripts": {
+    "build-aurelia": "au build"
   }
 }
