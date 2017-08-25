@@ -8,7 +8,7 @@
     <div class="words">
       <word repeat.for="word of words" 
         click.trigger="selected(word)" 
-        correct.bind="word === answer && correctAnswer === answer" 
-        incorrect.bind="word === answer && correctAnswer !== answer">${word}</word>
+        correct.bind="answer && correctAnswer === word" 
+        incorrect.bind="word === answer && correctAnswer !== word">${word}</word>
     </div>
 </template>

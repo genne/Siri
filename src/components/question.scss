@@ -1,9 +1,8 @@
 .question {
 
+    min-height: 100vh;
     display: block;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid grey;
+    padding-top: 1px;
 
     &_words {
         display: flex;

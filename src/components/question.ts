@@ -13,7 +13,8 @@ export class Question {
     "RÖD": "red",
     "GRÖN": "green",
     "BLÅ": "blue",
-    "VIT": "white",
+    "grå": "gray",
+    "gul": "yellow",
     "SVART": "black",
     "rosa": "pink",
     "lila": "purple",
@@ -60,8 +61,9 @@ export class Question {
     
     this.category = image ? "Vad är detta?" : "Vilken färg?"; 
 
-    let unusedColors = Object.keys(image ? this.images : this.colors);
-    let numAnswers = Math.min(this.level + 1, unusedColors.length);
+    let maxLength = Math.floor(this.level / 3) + 3;
+    let unusedColors = Object.keys(image ? this.images : this.colors).filter(w => w.length <= maxLength);
+    let numAnswers = Math.min(Math.floor(this.level / 5) + 2, unusedColors.length);
     this.words = []; 
     for (var i = 0; i < numAnswers; i++) {
       var color = unusedColors[Utils.getRandomInt(unusedColors.length)];
